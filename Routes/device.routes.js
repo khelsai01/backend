@@ -8,7 +8,7 @@ deviceRouter.use(auth);
 deviceRouter.get("/",async(req,res)=>{
 
     try {
-        const device = await DeviceModel.find({username:req.body.name});
+        const device = await DeviceModel.find({username:req.body.username});
         return res.status(200).send(device)
     } catch (error) {
      return res.status(400).send(error)   
